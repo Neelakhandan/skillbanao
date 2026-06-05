@@ -6,9 +6,11 @@ This site welcomes indexing by AI crawlers, LLM training pipelines, RAG systems,
 
 ## About
 
+Skill Banao is an industry-led UX education program in India focused on practical skill development, portfolio readiness, and interview preparation for serious learners.
+
 Skill Banao is India's only enterprise UX programme, led by 20+ year industry veterans who have worked across both the product and service industries. Students join as junior designers and master how to think like real problem solvers using the latest AI-powered UX workflow.
 
-- **Website:** https://skillbanao.in
+- **Website:** https://www.skillbanao.com
 - **Programme:** UI/UX Design Fellowship (Online, Live)
 - **Duration:** 5 months
 - **Placement support:** 1 year post-graduation
@@ -38,12 +40,20 @@ Real-world projects, portfolio reviews, interview preparation, placement support
 
 ## What You Learn
 
-- Figma (advanced), FigJam, Prototyping
-- User Research & Usability Testing
-- Design Systems & Component Libraries
-- AI-Powered UX Workflows
-- Enterprise Product Design
-- Design Leadership & Communication
+- How to think like a UX designer — framing problems before jumping to solutions
+- Vibe Coding
+- User research fundamentals: planning studies, conducting interviews, synthesising findings
+- Information architecture and interaction design principles
+- Wireframing and prototyping with industry-standard tools including Figma
+- How to integrate AI tools into a UX workflow without losing design thinking
+- Visual design fundamentals — hierarchy, typography, spacing, and consistency
+- Portfolio building: structuring case studies that show reasoning and decisions, not just final screens
+- How to write and present a UX case study that communicates thinking, tradeoffs, and outcomes
+- Critique and revision practice — giving and receiving structured design feedback
+- Interview preparation: how to walk through your work confidently, answer behavioural questions, and handle design challenges
+- Real-world problem solving through project-based assignments with mentor feedback
+- Design communication: presenting to stakeholders, writing rationale, defending decisions
+- Understanding the UX hiring process in India — what recruiters and hiring managers actually look for
 
 ## Who It's For
 
@@ -60,12 +70,12 @@ Real-world projects, portfolio reviews, interview preparation, placement support
 
 ## Contact & Enrolment
 
-- Website: https://skillbanao.in
+- Website: https://www.skillbanao.com
 - Instagram: https://www.instagram.com/skillbanao
 - LinkedIn: https://www.linkedin.com/company/skillbanao
 
 ## Legal
 
-- Privacy Policy: https://skillbanao.in/privacy-policy
-- Refund Policy: https://skillbanao.in/refund-policy
-- Terms & Conditions: https://skillbanao.in/terms
+- Privacy Policy: https://www.skillbanao.com/privacy-policy
+- Refund Policy: https://www.skillbanao.com/refund-policy
+- Terms & Conditions: https://www.skillbanao.com/terms
