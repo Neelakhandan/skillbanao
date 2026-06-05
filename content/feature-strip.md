@@ -1,0 +1,21 @@
+---
+features:
+  - icon: "graduation-cap"
+    label: "UX Lessons"
+    desc: "6 structured modules"
+  - icon: "radio"
+    label: "Live Sessions"
+    desc: "2× weekly live classes"
+  - icon: "bot"
+    label: "AI Integration"
+    desc: "AI tools in every module"
+  - icon: "list-checks"
+    label: "Weekly Tasks"
+    desc: "Hands-on assignments"
+  - icon: "folder-open"
+    label: "Portfolio Builds"
+    desc: "3 real-world projects"
+  - icon: "scan-eye"
+    label: "Design Critiques"
+    desc: "Expert review sessions"
+---

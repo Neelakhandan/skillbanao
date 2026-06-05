@@ -1,0 +1,47 @@
+---
+title: "Placement Support"
+title_highlight: "Placement"
+subtitle: "We don't just teach, we help you get hired. 6 months of placement support after you graduate."
+
+features:
+  - icon: "briefcase"
+    title: "Resume & Portfolio Review"
+    description: "Expert feedback on your portfolio and resume before every application."
+  - icon: "users"
+    title: "Mock Interviews"
+    description: "Practice design challenges and portfolio walkthroughs with senior designers."
+  - icon: "linkedin"
+    title: "LinkedIn Optimisation"
+    description: "Profile audit and optimisation to get noticed by top recruiters."
+
+
+support_duration: "6 Months"
+hiring_partners: "20+"
+placement_rate: "94%"
+
+companies:
+  - name: "Google"
+    logo: "/images/companies/google.svg"
+  - name: "Microsoft"
+    logo: "/images/companies/microsoft.svg"
+  - name: "Flipkart"
+    logo: "/images/companies/flipkart.svg"
+  - name: "Swiggy"
+    logo: "/images/companies/swiggy.svg"
+  - name: "Zomato"
+    logo: "/images/companies/zomato.svg"
+  - name: "Razorpay"
+    logo: "/images/companies/razorpay.svg"
+  - name: "PhonePe"
+    logo: "/images/companies/phonepe.svg"
+  - name: "CRED"
+    logo: "/images/companies/cred.svg"
+  - name: "Meesho"
+    logo: "/images/companies/meesho.svg"
+  - name: "Groww"
+    logo: "/images/companies/groww.svg"
+  - name: "Zepto"
+    logo: "/images/companies/zepto.svg"
+  - name: "Dream11"
+    logo: "/images/companies/dream11.svg"
+---

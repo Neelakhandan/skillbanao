@@ -1,65 +1,83 @@
-import Image from "next/image";
+import dynamic from 'next/dynamic'
+import { getContent } from '@/lib/content'
+import { courseSchema, organizationSchema, faqSchema } from '@/lib/seo'
+
+// Above-fold: eager
+import { Hero } from '@/components/sections/Hero'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
+
+// Below-fold: dynamically imported for JS code-splitting
+const FeatureStrip        = dynamic(() => import('@/components/sections/FeatureStrip').then(m => m.FeatureStrip))
+const AIAdvantage         = dynamic(() => import('@/components/sections/AIAdvantage').then(m => m.AIAdvantage))
+const WhatYouLearn        = dynamic(() => import('@/components/sections/WhatYouLearn').then(m => m.WhatYouLearn))
+const LearningPath        = dynamic(() => import('@/components/sections/LearningPath').then(m => m.LearningPath))
+const Instructors         = dynamic(() => import('@/components/sections/Instructors').then(m => m.Instructors))
+const Placement           = dynamic(() => import('@/components/sections/Placement').then(m => m.Placement))
+const SuccessStories      = dynamic(() => import('@/components/sections/SuccessStories').then(m => m.SuccessStories))
+const VibeCoding          = dynamic(() => import('@/components/sections/VibeCoding').then(m => m.VibeCoding))
+const WhySkillBanao       = dynamic(() => import('@/components/sections/WhySkillBanao').then(m => m.WhySkillBanao))
+const SkillBanaoDifference = dynamic(() => import('@/components/sections/SkillBanaoDifference').then(m => m.SkillBanaoDifference))
+const LearningPhilosophy  = dynamic(() => import('@/components/sections/LearningPhilosophy').then(m => m.LearningPhilosophy))
+const FAQ                 = dynamic(() => import('@/components/sections/FAQ').then(m => m.FAQ))
+
+import type {
+  HeroData, StatsData, CurriculumData,
+  InstructorsData, PlacementData,
+  TestimonialsData, FaqData,
+  WhySkillBanaoData, WhoItsForData, DifferenceData, FeatureStripData,
+  CurriculumModulesData, LearningPhilosophyData,
+} from '@/lib/types'
 
 export default function Home() {
+  const heroData         = getContent<HeroData>('hero.md')
+  const featureStripData = getContent<FeatureStripData>('feature-strip.md')
+  const statsData        = getContent<StatsData>('stats.md')
+  const curriculumData        = getContent<CurriculumData>('curriculum.md')
+  const curriculumModulesData   = getContent<CurriculumModulesData>('curriculum-modules.md')
+  const learningPhilosophyData  = getContent<LearningPhilosophyData>('learning-philosophy.md')
+  const instructorsData  = getContent<InstructorsData>('instructors.md')
+  const placementData    = getContent<PlacementData>('placement.md')
+  const testimonialsData = getContent<TestimonialsData>('testimonials.md')
+  const faqData          = getContent<FaqData>('faqs.md')
+  const whyData          = getContent<WhySkillBanaoData>('why-skill-banao.md')
+  const whoData          = getContent<WhoItsForData>('who-its-for.md')
+  const differenceData   = getContent<DifferenceData>('difference.md')
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    <>
+      {/* JSON-LD Structured Data — injected server-side for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqData.items)) }}
+      />
+
+      {/* Above-fold — eager loaded */}
+      <Hero data={heroData} stats={statsData.hero_stats} />
+
+      {/* Below-fold — JS code-split, still SSR */}
+      <FeatureStrip data={featureStripData} />
+      <AIAdvantage data={curriculumData.ai_section} />
+      <VibeCoding />
+      <Instructors data={instructorsData} />
+      <WhatYouLearn data={curriculumModulesData} />
+      <LearningPhilosophy data={learningPhilosophyData} />
+      <WhySkillBanao data={whyData} />
+      <LearningPath data={whoData} />
+      <Placement data={placementData} />
+      <SuccessStories data={testimonialsData} />
+      <SkillBanaoDifference data={differenceData} />
+      <FAQ data={faqData} />
+
+      {/* UX utility */}
+      <ScrollToTop />
+    </>
+  )
 }

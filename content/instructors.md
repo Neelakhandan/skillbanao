@@ -1,0 +1,46 @@
+---
+title: "Mentors Who Set the Bar"
+title_highlight: "Mentors"
+subtitle: "Learn directly from industry veterans who've built real products, built studios, led real teams, and solved real business problems. "
+
+items:
+  - name: "Anil G"
+    role: "Design Manager"
+    company: "IBM"
+    avatar: "/images/instructors/Anil.png"
+    bio: "22+ years of experience leading enterprise UX across product and service design."
+    linkedin: "https://www.linkedin.com/in/neelakandan/"
+    website: "https://neelan.design"
+
+  - name: "Rajesh Babu"
+    role: "Enterprise Design Lead"
+    company: "IBM"
+    avatar: "/images/instructors/Rajesh.png"
+    bio: "20+ years of experience driving design systems and fintech UX at scale."
+    linkedin: "https://www.linkedin.com/in/rajesh-ux/"
+    website: "https://www.rajeshbabu.in/"
+
+  - name: "Linko Joy Oinam"
+    role: "Assistant Professor, UX Design"
+    company: "MITU"
+    avatar: "/images/instructors/Lingko.png"
+    bio: "17+ years of experience in user research, usability testing, and research operations."
+    linkedin: "https://www.linkedin.com/in/lingkojoy/"
+    website: ""
+
+  - name: "Anish Krishnan"
+    role: "Design Manager"
+    company: "IBM"
+    avatar: "/images/instructors/Anish.png"
+    bio: "17+ years of experience in visual design, team leadership, and fintech products."
+    linkedin: "https://www.linkedin.com/in/anishkrishnanma/"
+    website: ""
+
+  - name: "Meril Paul"
+    role: "Principal UX Designer"
+    company: "Guidewire Software"
+    avatar: "/images/instructors/Meril.png"
+    bio: "16+ years of experience crafting enterprise UX solutions across complex domains."
+    linkedin: "https://www.linkedin.com/in/merilbosepaul/"
+    website: ""
+---

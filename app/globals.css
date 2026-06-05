@@ -1,26 +1,261 @@
 @import "tailwindcss";
 
+/* ─── Brand CSS Variables ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Brand */
+  --color-primary:        #5B2EFF;
+  --color-primary-light:  #7B5FFF;
+  --color-primary-dark:   #3A0FCC;
+
+  /* Accent */
+  --color-accent:         #ffc200;   /* Brand gold */
+  --color-accent-2:       #E05A22;   /* Darker orange — readable on white */
+
+  /* Neutrals — Light theme */
+  --color-bg-dark:        #ffffff;   /* Page background */
+  --color-bg-card:        #f9fafc;   /* Section alternates */
+  --color-bg-elevated:    #EDE9FF;   /* Cards, chips, elevated surfaces */
+  --color-border:         #E4E2F5;   /* Subtle borders */
+  --color-text-primary:   #0F0A2E;   /* Headings — deep indigo-black */
+  --color-text-secondary: #3B3566;   /* Body copy */
+  --color-text-muted:     #7A729E;   /* Placeholders / captions */
+
+  /* Semantic */
+  --color-success:        #15803D;
+  --color-warning:        #B45309;
+  --color-error:          #DC2626;
+
+  /* Fonts (set by next/font/google via layout.tsx) */
+  --font-heading: 'DM Sans', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
 }
 
+/* ─── Tailwind v4 Theme Tokens ───────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary:        var(--color-primary);
+  --color-primary-light:  var(--color-primary-light);
+  --color-primary-dark:   var(--color-primary-dark);
+  --color-accent:         var(--color-accent);
+  --color-accent-2:       var(--color-accent-2);
+  --color-bg-dark:        var(--color-bg-dark);
+  --color-bg-card:        var(--color-bg-card);
+  --color-bg-elevated:    var(--color-bg-elevated);
+  --color-border:         var(--color-border);
+  --color-text-primary:   var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted:     var(--color-text-muted);
+
+  --font-heading: var(--font-body);
+  --font-body:    var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base Typography ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--color-text-primary);
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.3;
+    color: var(--color-text-primary);
+  }
+
+  h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Aurora component CSS variables ─────────────────────────────── */
+/* These colour values are used inside the aurora gradient strings    */
+:root {
+  --transparent: transparent;
+  --white:        #ffffff;
+  --aurora-1: rgba(91, 46, 255, 0.55);
+  --aurora-2: rgba(123, 95, 255, 0.45);
+  --aurora-3: rgba(167, 139, 250, 0.35);
+  --aurora-4: rgba(196, 181, 253, 0.25);
+  --aurora-5: rgba(129, 140, 248, 0.45);
+}
+
+/* ─── Hero dark-section override ─────────────────────────────────── */
+/* Scoped to .section-hero so the hero keeps its dark palette          */
+/* while the rest of the page uses the light :root tokens              */
+.section-hero {
+  --color-bg-dark:        #080612;
+  --color-bg-card:        #0F0A1E;
+  --color-bg-elevated:    #1A1438;
+  --color-border:         rgba(91, 46, 255, 0.18);
+  --color-text-primary:   #F0EEFF;
+  --color-text-secondary: #A89EC8;
+  --color-text-muted:     #6B6490;
+  --white:                #080612;
+  --aurora-1: rgba(91, 46, 255, 0.8);
+  --aurora-2: rgba(123, 95, 255, 0.7);
+  --aurora-3: rgba(167, 139, 250, 0.6);
+  --aurora-4: rgba(212, 160, 23, 0.4);
+  --aurora-5: rgba(129, 140, 248, 0.7);
+}
+
+.section-hero .text-gradient-primary {
+  background: linear-gradient(135deg, #A78BFA, #C4B5FD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Dark mid-page section override ─────────────────────────────── */
+.section-dark {
+  --color-bg-dark:        #0D0920;
+  --color-bg-card:        #150F2E;
+  --color-bg-elevated:    #1E1645;
+  --color-border:         rgba(91, 46, 255, 0.25);
+  --color-text-primary:   #F0EEFF;
+  --color-text-secondary: #A89EC8;
+  --color-text-muted:     #6B6490;
+}
+
+.section-dark .text-gradient-primary {
+  background: linear-gradient(135deg, #A78BFA, #C4B5FD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Keyframe Animations ─────────────────────────────────────────── */
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to   { background-position: 350% 50%, 350% 50%; }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(170,255,0,0.6), 0 0 40px rgba(170,255,0,0.3); }
+  50%       { box-shadow: 0 0 28px rgba(170,255,0,0.9), 0 0 60px rgba(170,255,0,0.5); }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 32px rgba(91, 46, 255, 0.25);
+  }
+
+  .glow-primary-lg {
+    box-shadow: 0 0 64px rgba(91, 46, 255, 0.2);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 32px rgba(212, 160, 23, 0.2);
+  }
+
+  .mesh-bg {
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% 20%, rgba(91, 46, 255, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(91, 46, 255, 0.04) 0%, transparent 60%);
+  }
+
+  .card-border {
+    border: 1px solid var(--color-border);
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-aurora {
+    animation: aurora 60s linear infinite;
+  }
 }
