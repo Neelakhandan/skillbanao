@@ -13,28 +13,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${BASE}/#curriculum`,
+      url: `${BASE}/privacy-policy`,
       lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
-      url: `${BASE}/#instructors`,
+      url: `${BASE}/refund-policy`,
       lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
-      url: `${BASE}/#placement`,
+      url: `${BASE}/terms`,
       lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/#faq`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 }

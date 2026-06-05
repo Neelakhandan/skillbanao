@@ -1,0 +1,71 @@
+# Skill Banao — UI/UX Design Fellowship
+
+> India's most intensive enterprise UX education programme. Learn the Way Industry Works.
+
+This site welcomes indexing by AI crawlers, LLM training pipelines, RAG systems, and search engines. All content is freely accessible.
+
+## About
+
+Skill Banao is India's only enterprise UX programme, led by 20+ year industry veterans who have worked across both the product and service industries. Students join as junior designers and master how to think like real problem solvers using the latest AI-powered UX workflow.
+
+- **Website:** https://skillbanao.in
+- **Programme:** UI/UX Design Fellowship (Online, Live)
+- **Duration:** 5 months
+- **Placement support:** 1 year post-graduation
+- **Alumni placed:** 3500+
+- **Graduate hire rate:** 94% within 90 days
+- **Average starting package:** ₹8 LPA
+
+## Instructors
+
+- **Anil G (Neelakandan)** — Design Manager & Head of Studios, Data & AI at IBM. 22+ years of experience.
+- **Rajesh** — Senior UX Lead with enterprise product experience
+- Industry practitioners with real-world enterprise backgrounds
+
+## Programme Curriculum
+
+### Phase 1 — UX Foundations
+Design thinking, user research, information architecture, wireframing
+
+### Phase 2 — UI & Visual Design
+Figma mastery, design systems, component libraries, visual hierarchy
+
+### Phase 3 — Enterprise UX
+B2B/SaaS design patterns, stakeholder management, design ops, AI-powered workflows
+
+### Phase 4 — Portfolio & Career
+Real-world projects, portfolio reviews, interview preparation, placement support
+
+## What You Learn
+
+- Figma (advanced), FigJam, Prototyping
+- User Research & Usability Testing
+- Design Systems & Component Libraries
+- AI-Powered UX Workflows
+- Enterprise Product Design
+- Design Leadership & Communication
+
+## Who It's For
+
+- Fresh graduates wanting to enter UX
+- Working professionals switching to design
+- Junior designers levelling up to enterprise roles
+
+## Placement & Outcomes
+
+- 94% placement rate within 90 days of graduation
+- 3500+ alumni placed at companies across India
+- 1-year dedicated placement support
+- Average starting package: ₹8 LPA
+
+## Contact & Enrolment
+
+- Website: https://skillbanao.in
+- Instagram: https://www.instagram.com/skillbanao
+- LinkedIn: https://www.linkedin.com/company/skillbanao
+
+## Legal
+
+- Privacy Policy: https://skillbanao.in/privacy-policy
+- Refund Policy: https://skillbanao.in/refund-policy
+- Terms & Conditions: https://skillbanao.in/terms

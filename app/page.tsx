@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import { getContent } from '@/lib/content'
-import { courseSchema, organizationSchema, faqSchema } from '@/lib/seo'
+import { courseSchema, organizationSchema, faqSchema, websiteSchema } from '@/lib/seo'
 
 // Above-fold: eager
 import { Hero } from '@/components/sections/Hero'
@@ -57,6 +57,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqData.items)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }}
       />
 
       {/* Above-fold — eager loaded */}
