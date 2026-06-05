@@ -26,7 +26,7 @@ function renderBody(text: string) {
   })
 }
 
-export function WhySkillBanao({ data }: WhySkillBanaoData & { data: WhySkillBanaoData }) {
+export function WhySkillBanao({ data }: WhySkillBanaoProps) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
