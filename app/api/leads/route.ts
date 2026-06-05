@@ -15,22 +15,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Endpoint not configured' }, { status: 500 })
   }
 
-  const body = JSON.stringify({ name, email, phone, type })
-  const headers = { 'Content-Type': 'application/json' }
-
-  // Step 1 — POST to Apps Script, capture redirect without following it
-  const first = await fetch(endpoint, {
+  // Google Apps Script processes the POST body in doPost(e) before redirecting.
+  // Follow the redirect normally (302 → GET) — do NOT re-POST to the redirect URL.
+  await fetch(endpoint, {
     method: 'POST',
-    headers,
-    body,
-    redirect: 'manual',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, phone, type }),
   })
-
-  // Step 2 — Google redirects the POST; re-POST to the redirect URL
-  const redirectUrl = first.headers.get('location')
-  if (redirectUrl) {
-    await fetch(redirectUrl, { method: 'POST', headers, body })
-  }
 
   return NextResponse.json({ success: true })
 }
