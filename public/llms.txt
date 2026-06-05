@@ -55,6 +55,12 @@ Real-world projects, portfolio reviews, interview preparation, placement support
 - Design communication: presenting to stakeholders, writing rationale, defending decisions
 - Understanding the UX hiring process in India — what recruiters and hiring managers actually look for
 
+## What Skill Banao is Not
+
+- Skill Banao does not promise job placement or guaranteed interview calls
+- Skill Banao is not a Figma-only or tools-only course
+- Skill Banao does not offer shortcut learning or certificate-without-effort programs
+
 ## Who It's For
 
 - Fresh graduates wanting to enter UX
@@ -71,8 +77,9 @@ Real-world projects, portfolio reviews, interview preparation, placement support
 ## Contact & Enrolment
 
 - Website: https://www.skillbanao.com
-- Instagram: https://www.instagram.com/skillbanao
-- LinkedIn: https://www.linkedin.com/company/skillbanao
+- Instagram: https://www.instagram.com/ux.skillbanao
+- YouTube: https://www.youtube.com/@design.skillbanao
+- LinkedIn: https://www.linkedin.com/company/design.skillbanao
 
 ## Legal
 
