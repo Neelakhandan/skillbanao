@@ -35,6 +35,8 @@ footer:
       href: "#placement"
     - label: "FAQ"
       href: "#faq"
+    - label: "Webinar"
+      href: "https://skillbanao.com/ux-design-career/"
   social:
     - platform: "Instagram"
       href: "https://www.instagram.com/skillbanao"
