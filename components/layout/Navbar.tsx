@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -16,6 +17,8 @@ interface NavbarProps {
 export function Navbar({ navLinks, ctaNav, logo, siteName }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const isWebinar = pathname === '/webinar'
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -68,67 +71,71 @@ export function Navbar({ navLinks, ctaNav, logo, siteName }: NavbarProps) {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer"
-                style={{ color: isScrolled ? 'var(--color-text-secondary)' : 'rgba(255,255,255,0.7)' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = isScrolled ? 'var(--color-primary)' : '#ffffff'
-                  e.currentTarget.style.background = 'rgba(91,46,255,0.08)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = isScrolled ? 'var(--color-text-secondary)' : 'rgba(255,255,255,0.7)'
-                  e.currentTarget.style.background = 'transparent'
-                }}
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
+          {!isWebinar && (
+            <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer"
+                  style={{ color: isScrolled ? 'var(--color-text-secondary)' : 'rgba(255,255,255,0.7)' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = isScrolled ? 'var(--color-primary)' : '#ffffff'
+                    e.currentTarget.style.background = 'rgba(91,46,255,0.08)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = isScrolled ? 'var(--color-text-secondary)' : 'rgba(255,255,255,0.7)'
+                    e.currentTarget.style.background = 'transparent'
+                  }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+          )}
 
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3">
-            <a
-              href="https://design.skillbanao.com/learn/account/signin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
-              style={{
-                background: 'var(--color-primary)',
-                boxShadow: '0 0 24px rgba(91,46,255,0.4)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--color-primary-light)'
-                e.currentTarget.style.boxShadow = '0 0 36px rgba(91,46,255,0.6)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--color-primary)'
-                e.currentTarget.style.boxShadow = '0 0 24px rgba(91,46,255,0.4)'
-              }}
-            >
-              Sign in
-            </a>
+          {!isWebinar && (
+            <div className="flex items-center gap-3">
+              <a
+                href="https://design.skillbanao.com/learn/account/signin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
+                style={{
+                  background: 'var(--color-primary)',
+                  boxShadow: '0 0 24px rgba(91,46,255,0.4)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'var(--color-primary-light)'
+                  e.currentTarget.style.boxShadow = '0 0 36px rgba(91,46,255,0.6)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'var(--color-primary)'
+                  e.currentTarget.style.boxShadow = '0 0 24px rgba(91,46,255,0.4)'
+                }}
+              >
+                Sign in
+              </a>
 
-            {/* Hamburger */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors"
-              style={{ color: isScrolled ? 'var(--color-text-primary)' : '#ffffff' }}
-              aria-label={isOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isOpen}
-            >
-              {isOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
+              {/* Hamburger */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden p-2 rounded-lg transition-colors"
+                style={{ color: isScrolled ? 'var(--color-text-primary)' : '#ffffff' }}
+                aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isOpen}
+              >
+                {isOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && !isWebinar && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}

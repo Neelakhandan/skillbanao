@@ -115,12 +115,7 @@ export function Footer({ footer }: FooterProps) {
         >
           <p>{footer.legal}</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a
-              href="https://skillbanao.com/ux-design-career/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors duration-200 hover:text-[var(--color-text-secondary)]"
-            >
+            <a href="/webinar" className="transition-colors duration-200 hover:text-[var(--color-text-secondary)]">
               Webinar
             </a>
             <a href="/privacy-policy" className="transition-colors duration-200 hover:text-[var(--color-text-secondary)]">

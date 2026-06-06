@@ -1,3 +1,9 @@
+export interface WebinarSchedule {
+  date: string
+  short_date: string
+  time: string
+}
+
 export interface NavLink {
   label: string
   href: string

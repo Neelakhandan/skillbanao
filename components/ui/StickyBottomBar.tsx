@@ -1,31 +1,47 @@
 'use client'
 
+interface Props {
+  date: string
+  short_date: string
+  time: string
+}
 
-export function StickyBottomBar() {
+export function StickyBottomBar({ date, short_date, time }: Props) {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center gap-6 px-5 py-3 md:px-10"
+      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 px-4 py-3 md:justify-center md:gap-6 md:px-10"
       style={{
         background: '#0A0A14',
         borderTop: '1px solid rgba(91,46,255,0.25)',
         backdropFilter: 'blur(12px)',
       }}
     >
-      {/* Title */}
-      <p
-        className="text-sm md:text-base font-semibold whitespace-nowrap"
-        style={{ color: '#F0EEFF' }}
-      >
-        Master enterprise design workflows powered by AI — <span style={{ fontWeight: 800, color: '#FFC200' }}>25th July 2026</span>
-      </p>
+      {/* Mobile label | Desktop full title */}
+      <div className="flex items-center min-w-0">
+        {/* Mobile: "UX + AI Masterclass · 25 July" */}
+        <p className="md:hidden text-sm font-semibold whitespace-nowrap" style={{ color: '#F0EEFF' }}>
+          UX + AI Masterclass{' '}
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>·</span>{' '}
+          <span style={{ color: '#FFC200', fontWeight: 800 }}>{short_date}</span>
+        </p>
 
-      {/* Divider */}
-      <span className="hidden sm:block w-px h-5 shrink-0" style={{ background: 'rgba(91,46,255,0.3)' }} />
+        {/* Desktop title */}
+        <p
+          className="hidden md:block text-sm md:text-base font-semibold whitespace-nowrap"
+          style={{ color: '#F0EEFF' }}
+        >
+          Master enterprise design workflows powered by AI —{' '}
+          <span style={{ fontWeight: 800, color: '#FFC200' }}>{date}</span>
+        </p>
+      </div>
+
+      {/* Divider — desktop only */}
+      <span className="hidden md:block w-px h-5 shrink-0" style={{ background: 'rgba(91,46,255,0.3)' }} />
 
       {/* CTA */}
       <a
         href="#apply"
-        className="relative px-6 py-2.5 rounded-lg text-sm font-black whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-105"
+        className="relative px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-black whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-105"
         style={{
           background: 'linear-gradient(135deg, #AAFF00, #7CDD00)',
           color: '#000',
@@ -36,7 +52,7 @@ export function StickyBottomBar() {
         REGISTER NOW FOR ₹199/-
       </a>
 
-      {/* Webinar time */}
+      {/* Webinar time widget — desktop only */}
       <div
         className="hidden sm:flex flex-col items-start leading-tight shrink-0 px-3 py-1.5 rounded-lg"
         style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}
@@ -45,7 +61,7 @@ export function StickyBottomBar() {
           Online Webinar
         </span>
         <span className="text-sm font-bold" style={{ color: '#FFFFFF' }}>
-          9:30 AM – 12:30 PM IST
+          {time}
         </span>
       </div>
 
