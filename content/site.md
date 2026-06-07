@@ -39,13 +39,13 @@ footer:
       href: "https://skillbanao.com/ux-design-career/"
   social:
     - platform: "Instagram"
-      href: "https://www.instagram.com/skillbanao"
+      href: "https://www.instagram.com/ux.skillbanao"
       icon: "instagram"
     - platform: "LinkedIn"
       href: "https://www.linkedin.com/company/skillbanao"
       icon: "linkedin"
     - platform: "YouTube"
-      href: "https://www.youtube.com/@skillbanao"
+      href: "https://www.youtube.com/@design.skillbanao"
       icon: "youtube"
   legal: "© 2026 Skill Banao. All rights reserved."
 ---
