@@ -1,6 +1,6 @@
 ---
 label: "What This Is And Is Not"
-heading: "This Is A Glimpse Of The Workflow — Not The Full Training"
+heading: "This Is A Glimpse Of The Workflow, Not The Full Training"
 body: |
   This session will not teach you the complete UX process or complete vibe coding in 3 hours. That would be dishonest.
 
