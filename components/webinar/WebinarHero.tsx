@@ -38,7 +38,7 @@ export function WebinarHero({ data, onRegister }: Props) {
 
             <h1
               className="font-bold leading-tight"
-              style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', color: '#fff' }}
+              style={{ fontSize: 'clamp(1.95rem, 4.75vw, 3.75rem)', color: '#fff' }}
             >
               {data.headline}
             </h1>
