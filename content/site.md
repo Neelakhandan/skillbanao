@@ -25,7 +25,7 @@ cta_nav:
   href: "#apply"
 
 footer:
-  tagline: "India's most intensive UI/UX Design Fellowship — live mentorship, real projects, guaranteed placement support."
+  tagline: "India's intensive UI/UX Design Fellowship — live mentorship, real projects, AI-powered workflows, and structured placement support."
   links:
     - label: "Curriculum"
       href: "#curriculum"
