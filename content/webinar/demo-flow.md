@@ -2,7 +2,7 @@
 label: "Live Demonstration"
 heading: "From Problem Insight To Working App Prototype"
 body: |
-  In this 3-hour live masterclass, we will take a simple product idea and show how it can move through a modern UX-to-AI workflow.
+  In this 3-hour live masterclass, we will take a product idea and show how it can move through a modern UX-to-AI workflow.
 
   You will see how research inputs, user needs, product requirements, prompting, AI-assisted design direction, and vibe coding can come together to create a working prototype.
 steps:
