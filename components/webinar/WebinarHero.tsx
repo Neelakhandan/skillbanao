@@ -40,8 +40,7 @@ export function WebinarHero({ data, onRegister }: Props) {
               className="font-bold leading-tight"
               style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', color: '#fff' }}
             >
-              Design with UX.{' '}
-              <span style={{ color: '#A78BFA' }}>Build with AI.</span>
+              {data.headline}
             </h1>
 
             <p className="text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
