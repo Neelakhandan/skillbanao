@@ -14,7 +14,7 @@ export async function MainLayout({ children }: { children: React.ReactNode }) {
         logo={site.logo}
         siteName={site.name}
       />
-      <main className="flex-1 pt-16 pb-16">
+      <main className="flex-1 pt-16">
         {children}
       </main>
       <Footer footer={site.footer} siteName={site.name} />
