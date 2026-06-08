@@ -3,42 +3,51 @@ title: "Refund and Returns Policy"
 last_updated: "May 2026"
 ---
 
-## Overview
+## M/s SKILL BANAO
+**Last Updated:** March 05, 2026
 
-We want you to feel confident enrolling with Skill Banao. This policy outlines the terms under which refunds are considered.
+## Cancellation by Skill Banao
+Skill Banao reserves the right to cancel or reschedule any course up to 14 days before the course’s first day. In such cases, registered students will be notified within 1 business day and will receive a full refund of the paid amount. Alternatively, students may choose to transfer their enrolment to the next available batch.
 
-## Refund Eligibility
+Skill Banao is not responsible for travel expenses or any other costs that may be incurred as a result of such cancellations.
 
-### 7-Day Cancellation Window
+## Cancellation by Students (Courses)
+Registrants who wish to cancel their course 7 days or more before the course start date will be eligible for a full refund.
 
-If you choose to withdraw from the fellowship within **7 days of your enrollment date**, you are eligible for a full refund, provided you have not attended more than 2 live sessions.
+No refund or carry-forward of course fees will be provided if the cancellation request is made less than 7 days before the course start date.
 
-### No Refund After 7 Days
+No refund will be provided once the first live session has been attended or the course materials have been accessed.
 
-After the 7-day window, fees are non-refundable. This is because:
+If a cancellation is accepted, the refund will be credited to the student’s bank account electronically after any applicable taxes or gateway charges are deducted. Students must provide their mode of payment and bank account details in the cancellation email.
 
-- Seats are limited and a confirmed enrollment prevents another student from joining
-- Instructors and mentors plan sessions around enrolled cohort size
-- Learning materials and access are granted immediately upon enrollment
+The fees paid for one participant cannot be transferred to another participant under any circumstances.
 
-## How to Request a Refund
+## Webinars
+Once payment is made for a webinar, no refunds will be provided. If you’re unable to attend, you can request to join a future session. We’ll try to accommodate based on availability.
 
-To request a refund within the eligible window:
+## EMI Payments
+For enrolments made via EMI, refunds (if approved) will be processed as per the third-party EMI provider’s terms. Processing fees or interest charges may be deducted. Please do not stop your EMI payments until the refund is formally confirmed by the provider.
 
-1. Email **hello@skillbanao.in** with the subject line: *Refund Request – [Your Full Name]*
-2. Include your enrollment ID or payment receipt
-3. Briefly state your reason for withdrawal
+## Refund Processing Time
+Approved refunds will be processed within 7–10 business days. EMI-based refunds may take 15–30 business days, depending on the provider.
 
-We will process eligible refunds within **7–10 business days** to the original payment method.
+## How to Request a Cancellation
+Send an email to info@skillbanao.com.
 
-## Transfers and Deferrals
+Please include:
 
-If you are unable to continue due to unforeseen circumstances (medical emergency, family crisis), you may request a **deferral to the next cohort** rather than a refund. Deferral requests are reviewed on a case-by-case basis and must be submitted within 14 days of enrollment.
+- Full name (as registered)
+- Registered email and phone number
+- Course name
+- Date of purchase
+- Payment method and transaction ID
+- Bank account details for the refund
+- Reason for cancellation
 
-## Partial Refunds
+## Contact
+For any questions or discrepancies, please write to us at info@skillbanao.com
 
-Partial refunds are not offered. The fellowship is a cohort-based live programme and cannot be partially consumed.
+**M/s SKILL BANAO**
 
-## Contact Us
-
-For refund-related queries, contact us at **hello@skillbanao.in** or reach out on WhatsApp. We aim to respond within 2 business hours.
+Skill Banao, 219 Mavelipuram Onam Park Zone,
+Kakkanad, Kochi, Kerala, India

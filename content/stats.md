@@ -12,9 +12,9 @@ hero_stats:
   - value: 1500
     suffix: "+"
     label: "Designers Mentored"
-  - value: 94
-    suffix: "%"
-    label: "Placement Rate"
+  - value: 6
+    suffix: "MTH"
+    label: "Placement Support"
   - value: 8
     prefix: "₹"
     suffix: " LPA"
