@@ -5,9 +5,9 @@ import { motion, useInView } from 'framer-motion'
 import { fadeUp, staggerContainer } from '@/lib/motion'
 import type { WebinarFellowshipBridgeData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarFellowshipBridgeData; onRegister: () => void }
+interface Props { data: WebinarFellowshipBridgeData }
 
-export function WebinarFellowshipBridge({ data, onRegister }: Props) {
+export function WebinarFellowshipBridge({ data }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -46,15 +46,17 @@ export function WebinarFellowshipBridge({ data, onRegister }: Props) {
               >
                 {data.cta}
               </a>
-              <button
-                onClick={onRegister}
-                className="px-6 py-3 rounded-xl text-sm font-bold transition-all"
+              <a
+                href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-xl text-sm font-bold transition-all text-center"
                 style={{ background: '#fff', color: '#5B2EFF' }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = '#F5F3FF' }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = '#fff' }}
               >
                 Register for Webinar →
-              </button>
+              </a>
             </motion.div>
             <motion.p variants={fadeUp} className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
               {data.supporting_line}

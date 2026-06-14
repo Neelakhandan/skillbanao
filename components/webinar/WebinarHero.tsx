@@ -7,10 +7,9 @@ import type { WebinarHeroData } from '@/lib/webinar-types'
 
 interface Props {
   data: WebinarHeroData
-  onRegister: () => void
 }
 
-export function WebinarHero({ data, onRegister }: Props) {
+export function WebinarHero({ data }: Props) {
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -57,15 +56,17 @@ export function WebinarHero({ data, onRegister }: Props) {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button
-                onClick={onRegister}
-                className="px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300"
+              <a
+                href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 text-center"
                 style={{ background: '#5B2EFF', boxShadow: '0 0 32px rgba(91,46,255,0.5)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 48px rgba(91,46,255,0.7)' }}
                 onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 32px rgba(91,46,255,0.5)' }}
               >
                 {data.cta_primary}
-              </button>
+              </a>
               <a
                 href="#demo-flow"
                 className="px-8 py-4 rounded-xl text-base font-semibold transition-all duration-300 text-center"

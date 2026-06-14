@@ -6,9 +6,9 @@ import { fadeUp } from '@/lib/motion'
 import { Section } from '@/components/ui/Section'
 import type { WebinarPricingCtaData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarPricingCtaData; onRegister: () => void }
+interface Props { data: WebinarPricingCtaData }
 
-export function WebinarPricingCTA({ data, onRegister }: Props) {
+export function WebinarPricingCTA({ data }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -48,15 +48,17 @@ export function WebinarPricingCTA({ data, onRegister }: Props) {
         >
           <p className="text-sm uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.4)' }}>Registration Fee</p>
           <p className="text-6xl font-black" style={{ color: '#A78BFA' }}>{data.price}</p>
-          <button
-            onClick={onRegister}
-            className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all"
+          <a
+            href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all text-center"
             style={{ background: '#5B2EFF', boxShadow: '0 0 32px rgba(91,46,255,0.5)', width: '100%', maxWidth: '320px' }}
             onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 48px rgba(91,46,255,0.7)' }}
             onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 32px rgba(91,46,255,0.5)' }}
           >
             {data.cta}
-          </button>
+          </a>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{data.supporting_line}</p>
         </motion.div>
       </div>

@@ -5,9 +5,9 @@ import { motion, useInView } from 'framer-motion'
 import { fadeUp } from '@/lib/motion'
 import type { WebinarFinalCtaData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarFinalCtaData; onRegister: () => void }
+interface Props { data: WebinarFinalCtaData }
 
-export function WebinarFinalCTA({ data, onRegister }: Props) {
+export function WebinarFinalCTA({ data }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -32,16 +32,18 @@ export function WebinarFinalCTA({ data, onRegister }: Props) {
             {data.body}
           </motion.p>
 
-          <motion.button
+          <motion.a
             variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-            onClick={onRegister}
+            href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all"
             style={{ background: '#5B2EFF', boxShadow: '0 0 40px rgba(91,46,255,0.6)' }}
-            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 60px rgba(91,46,255,0.8)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 40px rgba(91,46,255,0.6)' }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 60px rgba(91,46,255,0.8)' }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 40px rgba(91,46,255,0.6)' }}
           >
             {data.cta}
-          </motion.button>
+          </motion.a>
 
           <motion.p
             variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}

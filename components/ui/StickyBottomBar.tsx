@@ -40,7 +40,9 @@ export function StickyBottomBar({ date, short_date, time }: Props) {
 
       {/* CTA */}
       <a
-        href="#apply"
+        href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+        target="_blank"
+        rel="noopener noreferrer"
         className="relative px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-black whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-105"
         style={{
           background: 'linear-gradient(135deg, #AAFF00, #7CDD00)',

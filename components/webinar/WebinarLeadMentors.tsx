@@ -37,7 +37,6 @@ interface LeadMentorsData {
 
 interface Props {
   data: LeadMentorsData
-  onRegister: () => void
 }
 
 function LinkedInIcon() {
@@ -65,7 +64,7 @@ function getLinksByIndex(index: number) {
   return { linkedin: mentorLinks.rajesh.linkedin, website: null }
 }
 
-export function WebinarLeadMentors({ data, onRegister }: Props) {
+export function WebinarLeadMentors({ data }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -165,15 +164,17 @@ export function WebinarLeadMentors({ data, onRegister }: Props) {
         animate={inView ? 'visible' : 'hidden'}
         className="flex justify-center mt-10"
       >
-        <button
-          onClick={onRegister}
+        <a
+          href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all duration-300"
           style={{ background: '#5B2EFF', boxShadow: '0 0 32px rgba(91,46,255,0.4)' }}
           onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 48px rgba(91,46,255,0.6)' }}
           onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 32px rgba(91,46,255,0.4)' }}
         >
           {data.cta}
-        </button>
+        </a>
       </motion.div>
     </Section>
   )
