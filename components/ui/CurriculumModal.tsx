@@ -3,6 +3,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { X } from 'lucide-react'
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 interface CurriculumModalProps {
   open: boolean
   onClose: () => void
@@ -49,14 +55,26 @@ export function CurriculumModal({ open, onClose }: CurriculumModalProps) {
 
     setLoading(true)
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name.trim(), email: email.trim(), phone: phone.trim(), type: 'curriculum' }),
       })
+      if (res.ok) {
+        window.gtag?.('event', 'generate_lead', {
+          method: 'curriculum_download',
+          lead_source: 'curriculum_form',
+          form_name: 'download_curriculum',
+        })
+      }
     } catch {
       // continue regardless — PDF download should not be blocked
     }
+
+    window.gtag?.('event', 'curriculum_download', {
+      file_name: 'skill_banao_curriculum.pdf',
+      form_name: 'download_curriculum',
+    })
 
     const a = document.createElement('a')
     a.href = '/curriculum-skill-banao.pdf'

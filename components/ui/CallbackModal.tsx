@@ -3,6 +3,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { X } from 'lucide-react'
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 interface CallbackModalProps {
   open: boolean
   onClose: () => void
@@ -46,11 +52,18 @@ export function CallbackModal({ open, onClose }: CallbackModalProps) {
 
     setLoading(true)
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name.trim(), phone: phone.trim(), type: 'callback' }),
       })
+      if (res.ok) {
+        window.gtag?.('event', 'generate_lead', {
+          method: 'callback_request',
+          lead_source: 'callback_form',
+          form_name: 'request_callback',
+        })
+      }
     } catch {
       // continue regardless
     }
