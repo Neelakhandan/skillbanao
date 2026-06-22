@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { MentorModal } from '@/components/ui/MentorModal'
 import { Building2, Globe } from 'lucide-react'
 import Image from 'next/image'
 
@@ -157,6 +158,7 @@ function InstructorCard({ instructor, index }: { instructor: InstructorItem; ind
 }
 
 export function Instructors({ data }: InstructorsProps) {
+  const [mentorModalOpen, setMentorModalOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -211,14 +213,16 @@ export function Instructors({ data }: InstructorsProps) {
             Share your expertise. Shape India's next generation of enterprise UX designers.
           </p>
         </div>
-        <a
-          href="mailto:hello@skillbanao.in?subject=Mentor Application"
-          className="shrink-0 px-7 py-3 rounded-full font-semibold text-sm transition-opacity duration-200 hover:opacity-90 whitespace-nowrap"
-          style={{ background: '#22c55e', color: '#000' }}
+        <button
+          onClick={() => setMentorModalOpen(true)}
+          className="shrink-0 px-7 py-3 rounded-full font-semibold text-sm transition-opacity duration-200 hover:opacity-90 whitespace-nowrap cursor-pointer"
+          style={{ background: '#22c55e', color: '#000', border: 'none' }}
         >
           Join as a mentor
-        </a>
+        </button>
       </div>
+
+      <MentorModal open={mentorModalOpen} onClose={() => setMentorModalOpen(false)} />
     </Section>
   )
 }

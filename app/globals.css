@@ -55,6 +55,13 @@
     scroll-behavior: smooth;
   }
 
+  button,
+  [role="button"],
+  [role="checkbox"],
+  summary {
+    cursor: pointer;
+  }
+
   body {
     background-color: var(--color-bg-dark);
     color: var(--color-text-secondary);

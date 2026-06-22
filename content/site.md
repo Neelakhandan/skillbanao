@@ -42,7 +42,7 @@ footer:
       href: "https://www.instagram.com/ux.skillbanao"
       icon: "instagram"
     - platform: "LinkedIn"
-      href: "https://www.linkedin.com/company/skillbanao"
+      href: "https://www.linkedin.com/in/skill-banao/"
       icon: "linkedin"
     - platform: "YouTube"
       href: "https://www.youtube.com/@design.skillbanao"
