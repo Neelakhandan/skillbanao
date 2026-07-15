@@ -169,6 +169,13 @@ const inView = useInView(ref, { once: true, margin: '-80px' })
 | `glow-pulse` | Pulsing glow on sticky CTA (green) |
 | `gradient-shift` | Shifting gradient background (AIAdvantage) |
 
+### Inline CSS animations (page-level `<style>` tags)
+Used on standalone pages where Framer Motion is not available (server components).
+
+| Name | Effect | Used on |
+|---|---|---|
+| `rocketLaunch` | Float + wobble on the 🚀 icon (2.4s loop) | Registration success page heading |
+
 ---
 
 ## Icons
@@ -200,6 +207,29 @@ All interactive elements show a pointer cursor via global base styles:
 ```css
 button, [role="button"], [role="checkbox"], summary { cursor: pointer; }
 ```
+
+---
+
+## Standalone Dark Pages
+
+Pages without Navbar/Footer (e.g. registration success) use a dedicated dark palette — do not use the main site light-base tokens here.
+
+| Role | Value |
+|---|---|
+| Page background | `linear-gradient(160deg, #080612 0%, #0F0A1E 60%, #080612 100%)` |
+| Primary text | `#F0EEFF` |
+| Secondary text | `#A89EC8` |
+| Muted text / labels | `#7A729E` |
+| Card background | `rgba(255,255,255,0.04)` |
+| Card border | `rgba(91,46,255,0.25)` |
+| Divider lines | `rgba(255,255,255,0.07)` |
+
+Icon color palette used on the registration success page (each icon gets its own color + matching tinted `rgba` background):
+- Gold `#FFC200` — calendar / date
+- Sky blue `#38BDF8` — video/time, email
+- Green `#AAFF00` — payment / success states
+- WhatsApp green `#25D366` — messaging / WhatsApp
+- Orange `#E05A22` — video joining / action items
 
 ---
 
