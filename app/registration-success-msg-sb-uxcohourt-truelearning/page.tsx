@@ -31,6 +31,16 @@ export default function RegistrationSuccessPage() {
         padding: '48px 20px 80px',
       }}
     >
+      <style>{`
+        @keyframes rocketLaunch {
+          0%   { transform: translateY(0) rotate(0deg); }
+          20%  { transform: translateY(-6px) rotate(-8deg); }
+          40%  { transform: translateY(-2px) rotate(4deg); }
+          60%  { transform: translateY(-5px) rotate(-5deg); }
+          80%  { transform: translateY(-1px) rotate(3deg); }
+          100% { transform: translateY(0) rotate(0deg); }
+        }
+      `}</style>
       <div style={{ width: '100%', maxWidth: 560 }}>
 
         {/* Logo */}
@@ -79,10 +89,9 @@ export default function RegistrationSuccessPage() {
             }}
           >
             You&apos;re In!{' '}
-            <Rocket
-              size={32}
-              style={{ display: 'inline', verticalAlign: 'middle', color: '#FFC200' }}
-            />
+            <span style={{ display: 'inline-block', verticalAlign: 'middle', animation: 'rocketLaunch 2.4s ease-in-out infinite' }}>
+              <Rocket size={32} style={{ display: 'block', color: '#FFC200' }} />
+            </span>
           </h1>
           <p style={{ color: '#A89EC8', fontSize: 15, lineHeight: 1.6, margin: 0 }}>
             Thank you for registering for the Skill Banao Webinar.<br />
@@ -125,7 +134,7 @@ export default function RegistrationSuccessPage() {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#7A729E', fontSize: 14 }}>
-                <CalendarDays size={15} style={{ color: '#5B2EFF' }} />
+                <CalendarDays size={15} style={{ color: '#FFC200' }} />
                 Date
               </span>
               <span style={{ color: '#F0EEFF', fontSize: 14, fontWeight: 600 }}>
@@ -144,7 +153,7 @@ export default function RegistrationSuccessPage() {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#7A729E', fontSize: 14 }}>
-                <Video size={15} style={{ color: '#5B2EFF' }} />
+                <Video size={15} style={{ color: '#38BDF8' }} />
                 Time
               </span>
               <span style={{ color: '#F0EEFF', fontSize: 14, fontWeight: 600 }}>
@@ -162,7 +171,7 @@ export default function RegistrationSuccessPage() {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#7A729E', fontSize: 14 }}>
-                <CreditCard size={15} style={{ color: '#5B2EFF' }} />
+                <CreditCard size={15} style={{ color: '#AAFF00' }} />
                 Payment Received
               </span>
               <span style={{ color: '#AAFF00', fontSize: 14, fontWeight: 700 }}>₹199</span>
@@ -219,9 +228,9 @@ export default function RegistrationSuccessPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             {[
-              { icon: <Mail size={15} style={{ color: '#5B2EFF', flexShrink: 0 }} />, text: 'A payment confirmation email' },
-              { icon: <MessageCircle size={15} style={{ color: '#5B2EFF', flexShrink: 0 }} />, text: 'Important webinar updates and reminders on WhatsApp' },
-              { icon: <Video size={15} style={{ color: '#5B2EFF', flexShrink: 0 }} />, text: 'Webinar joining instructions before the event' },
+              { icon: <Mail size={15} style={{ color: '#38BDF8', flexShrink: 0 }} />, bg: 'rgba(56,189,248,0.12)', text: 'A payment confirmation email' },
+              { icon: <MessageCircle size={15} style={{ color: '#25D366', flexShrink: 0 }} />, bg: 'rgba(37,211,102,0.12)', text: 'Important webinar updates and reminders on WhatsApp' },
+              { icon: <Video size={15} style={{ color: '#E05A22', flexShrink: 0 }} />, bg: 'rgba(224,90,34,0.12)', text: 'Webinar joining instructions before the event' },
             ].map((item, i, arr) => (
               <div
                 key={i}
@@ -238,7 +247,7 @@ export default function RegistrationSuccessPage() {
                     width: 30,
                     height: 30,
                     borderRadius: 8,
-                    background: 'rgba(91,46,255,0.12)',
+                    background: item.bg,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
