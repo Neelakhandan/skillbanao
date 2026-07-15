@@ -2,6 +2,7 @@ import { getContent } from '@/lib/content'
 import type { WebinarSchedule } from '@/lib/types'
 import {
   CalendarDays,
+  Clock,
   CreditCard,
   CheckCircle2,
   Mail,
@@ -153,7 +154,7 @@ export default function RegistrationSuccessPage() {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#7A729E', fontSize: 14 }}>
-                <Video size={15} style={{ color: '#38BDF8' }} />
+                <Clock size={15} style={{ color: '#38BDF8' }} />
                 Time
               </span>
               <span style={{ color: '#F0EEFF', fontSize: 14, fontWeight: 600 }}>
