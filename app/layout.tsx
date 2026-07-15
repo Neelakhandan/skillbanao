@@ -3,7 +3,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script'
 import { DM_Sans } from 'next/font/google'
 import { MainLayout } from '@/components/layout/MainLayout'
-import { StickyBottomBar } from '@/components/ui/StickyBottomBar'
+import { StickyBarConditional } from '@/components/ui/StickyBarConditional'
 import { getContent } from '@/lib/content'
 import type { WebinarSchedule } from '@/lib/types'
 import './globals.css'
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col" style={{ fontFamily: 'var(--font-body)' }} suppressHydrationWarning>
         <MainLayout>{children}</MainLayout>
-        <StickyBottomBar date={schedule.date} short_date={schedule.short_date} time={schedule.time} />
+        <StickyBarConditional date={schedule.date} short_date={schedule.short_date} time={schedule.time} />
         <GoogleAnalytics gaId="G-PB9NCRBKJS" />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
