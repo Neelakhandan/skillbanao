@@ -18,6 +18,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'CCBot',             allow: '/' },
       { userAgent: 'FacebookBot',       allow: '/' },
     ],
-    sitemap: 'https://skillbanao.in/sitemap.xml',
+    sitemap: 'https://www.skillbanao.com/sitemap.xml',
   }
 }

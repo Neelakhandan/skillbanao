@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://skillbanao.in'),
+  metadataBase: new URL('https://www.skillbanao.com'),
   title: {
     default: 'Skill Banao — UI/UX Design Fellowship | Live Mentorship & Placement',
     template: '%s | Skill Banao',
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     'UI design bootcamp',
     'design career India',
   ],
-  authors: [{ name: 'Skill Banao', url: 'https://skillbanao.in' }],
+  authors: [{ name: 'Skill Banao', url: 'https://www.skillbanao.com' }],
   creator: 'Skill Banao',
   publisher: 'Skill Banao',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://skillbanao.in',
+    url: 'https://www.skillbanao.com',
     siteName: 'Skill Banao',
     title: 'Skill Banao — UI/UX Design Fellowship',
     description: "India's most intensive UI/UX design fellowship — live mentorship, real projects, 94% placement rate.",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://skillbanao.in',
+    canonical: 'https://www.skillbanao.com',
   },
   icons: {
     icon: [
