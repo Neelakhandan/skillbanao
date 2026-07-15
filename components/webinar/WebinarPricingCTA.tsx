@@ -49,7 +49,7 @@ export function WebinarPricingCTA({ data }: Props) {
           <p className="text-sm uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.4)' }}>Registration Fee</p>
           <p className="text-6xl font-black" style={{ color: '#A78BFA' }}>{data.price}</p>
           <a
-            href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+            href="https://rzp.io/rzp/design-skillbanao"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all text-center"

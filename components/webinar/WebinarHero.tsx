@@ -57,7 +57,7 @@ export function WebinarHero({ data }: Props) {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
-                href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+                href="https://rzp.io/rzp/design-skillbanao"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 text-center"

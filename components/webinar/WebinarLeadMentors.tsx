@@ -165,7 +165,7 @@ export function WebinarLeadMentors({ data }: Props) {
         className="flex justify-center mt-10"
       >
         <a
-          href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+          href="https://rzp.io/rzp/design-skillbanao"
           target="_blank"
           rel="noopener noreferrer"
           className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all duration-300"

@@ -47,7 +47,7 @@ export function WebinarFellowshipBridge({ data }: Props) {
                 {data.cta}
               </a>
               <a
-                href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+                href="https://rzp.io/rzp/design-skillbanao"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl text-sm font-bold transition-all text-center"

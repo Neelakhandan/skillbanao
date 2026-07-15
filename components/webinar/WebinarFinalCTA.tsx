@@ -34,7 +34,7 @@ export function WebinarFinalCTA({ data }: Props) {
 
           <motion.a
             variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-            href="https://design.skillbanao.com/learn/fast-checkout/274136?priceId=276634"
+            href="https://rzp.io/rzp/design-skillbanao"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all"
