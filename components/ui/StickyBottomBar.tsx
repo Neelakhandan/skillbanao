@@ -17,12 +17,13 @@ export function StickyBottomBar({ date, short_date, time }: Props) {
       }}
     >
       {/* Mobile label | Desktop full title */}
-      <div className="flex items-center min-w-0">
-        {/* Mobile: "UX + AI Masterclass · 25 July" */}
-        <p className="md:hidden text-sm font-semibold whitespace-nowrap" style={{ color: '#F0EEFF' }}>
-          UX + AI Masterclass{' '}
-          <span style={{ color: 'rgba(255,255,255,0.35)' }}>·</span>{' '}
-          <span style={{ color: '#FFC200', fontWeight: 800 }}>{short_date}</span>
+      <div className="flex flex-col justify-center min-w-0">
+        {/* Mobile: stacked — title above, date below */}
+        <p className="md:hidden text-xs font-semibold leading-tight" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          UX + AI Masterclass
+        </p>
+        <p className="md:hidden text-sm font-black leading-tight" style={{ color: '#FFC200' }}>
+          {short_date}
         </p>
 
         {/* Desktop title */}
@@ -51,7 +52,8 @@ export function StickyBottomBar({ date, short_date, time }: Props) {
           animation: 'glow-pulse 2s ease-in-out infinite',
         }}
       >
-        REGISTER NOW FOR ₹199/-
+        <span className="md:hidden">Register ₹199/-</span>
+        <span className="hidden md:inline">REGISTER NOW FOR ₹199/-</span>
       </a>
 
       {/* Webinar time widget — desktop only */}
