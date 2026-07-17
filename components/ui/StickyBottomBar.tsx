@@ -52,7 +52,7 @@ export function StickyBottomBar({ date, short_date, time }: Props) {
           animation: 'glow-pulse 2s ease-in-out infinite',
         }}
       >
-        <span className="md:hidden">Register ₹199/-</span>
+        <span className="md:hidden">REGISTER NOW ₹199/-</span>
         <span className="hidden md:inline">REGISTER NOW FOR ₹199/-</span>
       </a>
 
