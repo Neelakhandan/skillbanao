@@ -47,13 +47,14 @@ interface Props {
   pricingCtaData: WebinarPricingCtaData
   faqsData: WebinarFaqsData
   finalCtaData: WebinarFinalCtaData
+  registerUrl?: string
 }
 
-export function WebinarPageClient({ heroData, leadMentorsData, coreHookData, demoFlowData, clarityData, bigShiftData, takeawaysData, caseStudyData, differenceData, audienceData, notForData, whySkillBanaoData, mentorsData, inclusionsData, fellowshipBridgeData, pricingCtaData, faqsData, finalCtaData }: Props) {
+export function WebinarPageClient({ heroData, leadMentorsData, coreHookData, demoFlowData, clarityData, bigShiftData, takeawaysData, caseStudyData, differenceData, audienceData, notForData, whySkillBanaoData, mentorsData, inclusionsData, fellowshipBridgeData, pricingCtaData, faqsData, finalCtaData, registerUrl }: Props) {
   return (
     <>
-      <WebinarHero             data={heroData} />
-      <WebinarLeadMentors      data={leadMentorsData} />
+      <WebinarHero             data={heroData}             registerUrl={registerUrl} />
+      <WebinarLeadMentors      data={leadMentorsData}      registerUrl={registerUrl} />
       <WebinarCoreHook         data={coreHookData} />
       <WebinarDemoFlow         data={demoFlowData} />
       <WebinarClarity          data={clarityData} />
@@ -66,10 +67,10 @@ export function WebinarPageClient({ heroData, leadMentorsData, coreHookData, dem
       <WebinarWhySkillBanao    data={whySkillBanaoData} />
       <WebinarMentors          data={mentorsData} />
       <WebinarInclusions       data={inclusionsData} />
-      <WebinarFellowshipBridge data={fellowshipBridgeData} />
-      <WebinarPricingCTA       data={pricingCtaData} />
+      <WebinarFellowshipBridge data={fellowshipBridgeData} registerUrl={registerUrl} />
+      <WebinarPricingCTA       data={pricingCtaData}       registerUrl={registerUrl} />
       <WebinarFAQ              data={faqsData} />
-      <WebinarFinalCTA         data={finalCtaData} />
+      <WebinarFinalCTA         data={finalCtaData}         registerUrl={registerUrl} />
     </>
   )
 }

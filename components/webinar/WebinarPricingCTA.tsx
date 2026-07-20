@@ -6,9 +6,11 @@ import { fadeUp } from '@/lib/motion'
 import { Section } from '@/components/ui/Section'
 import type { WebinarPricingCtaData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarPricingCtaData }
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
 
-export function WebinarPricingCTA({ data }: Props) {
+interface Props { data: WebinarPricingCtaData; registerUrl?: string }
+
+export function WebinarPricingCTA({ data, registerUrl = DEFAULT_REGISTER_URL }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -49,7 +51,7 @@ export function WebinarPricingCTA({ data }: Props) {
           <p className="text-sm uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.4)' }}>Registration Fee</p>
           <p className="text-6xl font-black" style={{ color: '#A78BFA' }}>{data.price}</p>
           <a
-            href="https://rzp.io/rzp/design-skillbanao"
+            href={registerUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all text-center"

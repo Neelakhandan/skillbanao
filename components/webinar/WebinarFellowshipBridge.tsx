@@ -5,9 +5,11 @@ import { motion, useInView } from 'framer-motion'
 import { fadeUp, staggerContainer } from '@/lib/motion'
 import type { WebinarFellowshipBridgeData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarFellowshipBridgeData }
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
 
-export function WebinarFellowshipBridge({ data }: Props) {
+interface Props { data: WebinarFellowshipBridgeData; registerUrl?: string }
+
+export function WebinarFellowshipBridge({ data, registerUrl = DEFAULT_REGISTER_URL }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -47,7 +49,7 @@ export function WebinarFellowshipBridge({ data }: Props) {
                 {data.cta}
               </a>
               <a
-                href="https://rzp.io/rzp/design-skillbanao"
+                href={registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl text-sm font-bold transition-all text-center"

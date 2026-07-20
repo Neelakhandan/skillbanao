@@ -5,6 +5,12 @@ import { StickyBottomBar } from './StickyBottomBar'
 
 const STANDALONE_PATHS = ['/registration-success-msg-sb-uxcohourt-truelearning']
 
+const REGISTER_URL_MAP: Record<string, string> = {
+  '/webinar-linkedin': 'https://rzp.io/rzp/sb-webinar-linkedin-09Aug',
+}
+
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+
 interface Props {
   date: string
   short_date: string
@@ -14,5 +20,6 @@ interface Props {
 export function StickyBarConditional({ date, short_date, time }: Props) {
   const pathname = usePathname()
   if (STANDALONE_PATHS.some((p) => pathname.startsWith(p))) return null
-  return <StickyBottomBar date={date} short_date={short_date} time={time} />
+  const registerUrl = REGISTER_URL_MAP[pathname] ?? DEFAULT_REGISTER_URL
+  return <StickyBottomBar date={date} short_date={short_date} time={time} registerUrl={registerUrl} />
 }

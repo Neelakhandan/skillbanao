@@ -5,9 +5,11 @@ import { motion, useInView } from 'framer-motion'
 import { fadeUp } from '@/lib/motion'
 import type { WebinarFinalCtaData } from '@/lib/webinar-types'
 
-interface Props { data: WebinarFinalCtaData }
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
 
-export function WebinarFinalCTA({ data }: Props) {
+interface Props { data: WebinarFinalCtaData; registerUrl?: string }
+
+export function WebinarFinalCTA({ data, registerUrl = DEFAULT_REGISTER_URL }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -34,7 +36,7 @@ export function WebinarFinalCTA({ data }: Props) {
 
           <motion.a
             variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-            href="https://rzp.io/rzp/design-skillbanao"
+            href={registerUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all"

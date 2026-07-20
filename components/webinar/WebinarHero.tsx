@@ -5,11 +5,14 @@ import { Calendar, Clock, Wifi } from 'lucide-react'
 import { fadeUp, slideInLeft, slideInRight } from '@/lib/motion'
 import type { WebinarHeroData } from '@/lib/webinar-types'
 
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+
 interface Props {
   data: WebinarHeroData
+  registerUrl?: string
 }
 
-export function WebinarHero({ data }: Props) {
+export function WebinarHero({ data, registerUrl = DEFAULT_REGISTER_URL }: Props) {
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -57,7 +60,7 @@ export function WebinarHero({ data }: Props) {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
-                href="https://rzp.io/rzp/design-skillbanao"
+                href={registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 text-center"

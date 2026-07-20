@@ -4,7 +4,7 @@ import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import type { SiteData } from '@/lib/types'
 
-const STANDALONE_PATHS = ['/registration-success-msg-sb-uxcohourt-truelearning']
+const STANDALONE_PATHS = ['/registration-success-msg-sb-uxcohourt-truelearning', '/webinar-linkedin']
 
 export async function MainLayout({ children }: { children: React.ReactNode }) {
   const headersList = await headers()

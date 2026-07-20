@@ -4,9 +4,10 @@ interface Props {
   date: string
   short_date: string
   time: string
+  registerUrl?: string
 }
 
-export function StickyBottomBar({ date, short_date, time }: Props) {
+export function StickyBottomBar({ date, short_date, time, registerUrl = 'https://rzp.io/rzp/design-skillbanao' }: Props) {
   return (
     <div
       className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 px-4 py-3 md:justify-center md:gap-6 md:px-10"
@@ -41,7 +42,7 @@ export function StickyBottomBar({ date, short_date, time }: Props) {
 
       {/* CTA */}
       <a
-        href="https://rzp.io/rzp/design-skillbanao"
+        href={registerUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="relative px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-black whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-105"

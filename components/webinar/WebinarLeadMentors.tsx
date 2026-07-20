@@ -35,8 +35,11 @@ interface LeadMentorsData {
   mentors: LeadMentor[]
 }
 
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+
 interface Props {
   data: LeadMentorsData
+  registerUrl?: string
 }
 
 function LinkedInIcon() {
@@ -64,7 +67,7 @@ function getLinksByIndex(index: number) {
   return { linkedin: mentorLinks.rajesh.linkedin, website: null }
 }
 
-export function WebinarLeadMentors({ data }: Props) {
+export function WebinarLeadMentors({ data, registerUrl = DEFAULT_REGISTER_URL }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -165,7 +168,7 @@ export function WebinarLeadMentors({ data }: Props) {
         className="flex justify-center mt-10"
       >
         <a
-          href="https://rzp.io/rzp/design-skillbanao"
+          href={registerUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="px-10 py-4 rounded-xl text-base font-bold text-white transition-all duration-300"
