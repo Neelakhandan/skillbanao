@@ -6,7 +6,7 @@ import { fadeUp } from '@/lib/motion'
 import { Section } from '@/components/ui/Section'
 import type { WebinarPricingCtaData } from '@/lib/webinar-types'
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
 
 interface Props { data: WebinarPricingCtaData; registerUrl?: string }
 

@@ -9,7 +9,7 @@ const REGISTER_URL_MAP: Record<string, string> = {
   '/webinar-linkedin': 'https://rzp.io/rzp/sb-webinar-linkedin-09Aug',
 }
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
 
 interface Props {
   date: string

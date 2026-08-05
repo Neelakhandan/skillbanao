@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { fadeUp, staggerContainer } from '@/lib/motion'
 import type { WebinarFellowshipBridgeData } from '@/lib/webinar-types'
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/design-skillbanao'
+const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
 
 interface Props { data: WebinarFellowshipBridgeData; registerUrl?: string }
 
