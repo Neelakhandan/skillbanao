@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   robots: 'noindex, nofollow',
 }
 
-const LINKEDIN_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-linkedin-09Aug'
+const LINKEDIN_REGISTER_URL = 'https://pages.razorpay.com/webinar-02'
 
 export default function WebinarLinkedInPage() {
   const schedule = getContent<WebinarSchedule>('webinar-schedule.md')

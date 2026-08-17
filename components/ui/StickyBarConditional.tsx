@@ -6,10 +6,10 @@ import { StickyBottomBar } from './StickyBottomBar'
 const STANDALONE_PATHS = ['/registration-success-msg-sb-uxcohourt-truelearning']
 
 const REGISTER_URL_MAP: Record<string, string> = {
-  '/webinar-linkedin': 'https://rzp.io/rzp/sb-webinar-linkedin-09Aug',
+  '/webinar-linkedin': 'https://pages.razorpay.com/webinar-02',
 }
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
+const DEFAULT_REGISTER_URL = 'https://pages.razorpay.com/webinar-02'
 
 interface Props {
   date: string

@@ -7,7 +7,7 @@ interface Props {
   registerUrl?: string
 }
 
-export function StickyBottomBar({ date, short_date, time, registerUrl = 'https://rzp.io/rzp/sb-webinar-15aug' }: Props) {
+export function StickyBottomBar({ date, short_date, time, registerUrl = 'https://pages.razorpay.com/webinar-02' }: Props) {
   return (
     <div
       className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 px-4 py-3 md:justify-center md:gap-6 md:px-10"

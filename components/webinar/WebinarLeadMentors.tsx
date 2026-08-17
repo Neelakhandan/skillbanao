@@ -35,7 +35,7 @@ interface LeadMentorsData {
   mentors: LeadMentor[]
 }
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
+const DEFAULT_REGISTER_URL = 'https://pages.razorpay.com/webinar-02'
 
 interface Props {
   data: LeadMentorsData

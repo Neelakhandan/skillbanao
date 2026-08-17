@@ -6,7 +6,7 @@ import { fadeUp } from '@/lib/motion'
 import { Section } from '@/components/ui/Section'
 import type { WebinarPricingCtaData } from '@/lib/webinar-types'
 
-const DEFAULT_REGISTER_URL = 'https://rzp.io/rzp/sb-webinar-15aug'
+const DEFAULT_REGISTER_URL = 'https://pages.razorpay.com/webinar-02'
 
 interface Props { data: WebinarPricingCtaData; registerUrl?: string }
 
