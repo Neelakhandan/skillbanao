@@ -32,7 +32,7 @@ export function StickyBottomBar({ date, short_date, time, registerUrl = 'https:/
           className="hidden md:block text-sm md:text-base font-semibold whitespace-nowrap"
           style={{ color: '#F0EEFF' }}
         >
-          Master enterprise design workflows powered by AI —{' '}
+          Master UX + AI design workflow —{' '}
           <span style={{ fontWeight: 800, color: '#FFC200' }}>{date}</span>
         </p>
       </div>
