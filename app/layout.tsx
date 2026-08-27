@@ -4,8 +4,9 @@ import Script from 'next/script'
 import { DM_Sans } from 'next/font/google'
 import { MainLayout } from '@/components/layout/MainLayout'
 import { StickyBarConditional } from '@/components/ui/StickyBarConditional'
+import { WhatsAppButtonConditional } from '@/components/ui/WhatsAppButtonConditional'
 import { getContent } from '@/lib/content'
-import type { WebinarSchedule } from '@/lib/types'
+import type { WebinarSchedule, WhatsAppData } from '@/lib/types'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -88,6 +89,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const schedule = getContent<WebinarSchedule>('webinar-schedule.md')
+  const whatsapp = getContent<WhatsAppData>('whatsapp.md')
 
   return (
     <html
@@ -97,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col" style={{ fontFamily: 'var(--font-body)' }} suppressHydrationWarning>
         <MainLayout>{children}</MainLayout>
         <StickyBarConditional date={schedule.date} short_date={schedule.short_date} time={schedule.time} />
+        <WhatsAppButtonConditional data={whatsapp} />
         <GoogleAnalytics gaId="G-PB9NCRBKJS" />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`

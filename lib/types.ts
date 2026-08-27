@@ -332,3 +332,9 @@ export interface DifferenceData {
   rows: DifferenceRow[]
   col_headers: DifferenceColHeader[]
 }
+
+export interface WhatsAppData {
+  enabled: boolean
+  phone: string
+  message: string
+}

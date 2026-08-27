@@ -7,3 +7,6 @@ public/
 .cache/
 coverage/
 *.log
+package-lock.json
+tsconfig.tsbuildinfo
+*.tsbuildinfo
