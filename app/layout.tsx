@@ -101,6 +101,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyBarConditional date={schedule.date} short_date={schedule.short_date} time={schedule.time} />
         <WhatsAppButtonConditional data={whatsapp} />
         <GoogleAnalytics gaId="G-PB9NCRBKJS" />
+        <Script id="ms-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "y9qiqxhol9");
+          `}
+        </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
