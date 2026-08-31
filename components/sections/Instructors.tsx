@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MentorModal } from '@/components/ui/MentorModal'
-import { Building2, Globe } from 'lucide-react'
+import { Globe } from 'lucide-react'
 import Image from 'next/image'
 
 function LinkedInIcon({ size = 15 }: { size?: number }) {
@@ -85,21 +85,25 @@ function InstructorCard({ instructor, index }: { instructor: InstructorItem; ind
             </div>
           </>
         )}
-
-        <div
-          className="absolute bottom-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap"
-          style={{ background: 'rgba(255,255,255,0.9)', color: 'var(--color-text-primary)', backdropFilter: 'blur(8px)' }}
-        >
-          <Building2 size={11} style={{ color: 'var(--color-primary)' }} />
-          {instructor.company}
-        </div>
       </div>
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6">
-        <h3 className="text-lg font-bold mb-0.5" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>
-          {instructor.name}
-        </h3>
+        <div className="flex items-start justify-between gap-3 mb-0.5">
+          <h3 className="text-lg font-bold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>
+            {instructor.name}
+          </h3>
+          {instructor.company_logo && (
+            <div className="relative h-6 w-20 shrink-0">
+              <Image
+                src={instructor.company_logo}
+                alt={instructor.company}
+                fill
+                className="object-contain object-right"
+              />
+            </div>
+          )}
+        </div>
         <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)' }}>
           {instructor.role}
         </p>

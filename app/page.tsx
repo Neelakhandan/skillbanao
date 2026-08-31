@@ -68,16 +68,16 @@ export default function Home() {
 
       {/* Below-fold — JS code-split, still SSR */}
       <FeatureStrip data={featureStripData} />
+      <Instructors data={instructorsData} />
+      <Placement data={placementData} />
+      <LearningPath data={whoData} />
+      <SuccessStories data={testimonialsData} />
+      <WhatYouLearn data={curriculumModulesData} />
       <AIAdvantage data={curriculumData.ai_section} />
       <VibeCoding />
-      <Instructors data={instructorsData} />
-      <WhatYouLearn data={curriculumModulesData} />
+      <SkillBanaoDifference data={differenceData} />
       <LearningPhilosophy data={learningPhilosophyData} />
       <WhySkillBanao data={whyData} />
-      <LearningPath data={whoData} />
-      <Placement data={placementData} />
-      <SuccessStories data={testimonialsData} />
-      <SkillBanaoDifference data={differenceData} />
       <FAQ data={faqData} />
 
       {/* UX utility */}

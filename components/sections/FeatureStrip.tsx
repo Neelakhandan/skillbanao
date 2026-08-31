@@ -18,13 +18,15 @@ const ICON_MAP: Record<string, React.ElementType> = {
   'scan-eye':       ScanEye,
 }
 
-const STYLE_MAP: Record<string, { bg: string; color: string }> = {
-  'graduation-cap': { bg: 'rgba(91,46,255,0.08)',  color: 'var(--color-primary)' },
-  'radio':          { bg: 'rgba(255,194,0,0.12)',  color: '#7A5C00' },
-  'bot':            { bg: 'rgba(91,46,255,0.08)',  color: 'var(--color-primary)' },
-  'list-checks':    { bg: 'rgba(21,128,61,0.08)',  color: 'var(--color-success)' },
-  'folder-open':    { bg: 'rgba(224,90,34,0.08)',  color: 'var(--color-accent-2)' },
-  'scan-eye':       { bg: 'rgba(255,194,0,0.12)',  color: '#7A5C00' },
+const CHIP_BG = 'rgba(255,255,255,0.5)'
+
+const COLOR_MAP: Record<string, string> = {
+  'graduation-cap': '#7A5C00',
+  'radio':          '#92400E',
+  'bot':            '#713F12',
+  'list-checks':    '#A16207',
+  'folder-open':    '#854D0E',
+  'scan-eye':       '#B45309',
 }
 
 interface FeatureStripProps {
@@ -38,7 +40,7 @@ export function FeatureStrip({ data }: FeatureStripProps) {
   return (
     <section
       className="relative py-14 border-y"
-      style={{ background: 'var(--color-bg-card)', borderColor: 'var(--color-border)' }}
+      style={{ background: 'linear-gradient(180deg, #FFD84D 0%, #FFC200 55%, #FFAA00 100%)', borderColor: 'rgba(122,92,0,0.2)' }}
     >
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <motion.div
@@ -50,7 +52,7 @@ export function FeatureStrip({ data }: FeatureStripProps) {
         >
           {data.features.map((f) => {
             const Icon = ICON_MAP[f.icon] ?? GraduationCap
-            const style = STYLE_MAP[f.icon] ?? { bg: 'rgba(91,46,255,0.08)', color: 'var(--color-primary)' }
+            const color = COLOR_MAP[f.icon] ?? '#7A5C00'
             return (
               <motion.div
                 key={f.label}
@@ -59,15 +61,15 @@ export function FeatureStrip({ data }: FeatureStripProps) {
               >
                 <div
                   className="w-14 h-14 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ background: style.bg }}
+                  style={{ background: CHIP_BG }}
                 >
-                  <Icon size={24} style={{ color: style.color }} />
+                  <Icon size={24} style={{ color }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
                     {f.label}
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(15,10,46,0.65)' }}>
                     {f.desc}
                   </p>
                 </div>

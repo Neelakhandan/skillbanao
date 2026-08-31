@@ -15,6 +15,8 @@ interface PlacementProps {
   data: PlacementData
 }
 
+const BLUE = '#2563EB'
+
 const iconMap: Record<string, React.ReactNode> = {
   briefcase:    <Briefcase size={20} />,
   users:        <Users2 size={20} />,
@@ -30,7 +32,7 @@ export function Placement({ data }: PlacementProps) {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <Section id="placement" style={{ background: 'var(--color-bg-card)' }}>
+    <Section id="placement" style={{ background: '#EFF6FF' } as React.CSSProperties}>
       <SectionHeading
         badge="Career Support"
         title={data.title}
@@ -46,19 +48,19 @@ export function Placement({ data }: PlacementProps) {
         className="grid grid-cols-3 gap-4 mb-12"
       >
         {[
-          { value: data.placement_rate, label: 'Placement Rate', color: 'var(--color-success)' },
-          { value: data.hiring_partners, label: 'Years Industry Experience', color: 'var(--color-accent)' },
-          { value: data.support_duration, label: 'Support After Graduation', color: 'var(--color-primary)' },
+          { value: data.placement_rate, label: 'Placement Rate' },
+          { value: data.hiring_partners, label: 'Years Industry Experience' },
+          { value: data.support_duration, label: 'Support After Graduation' },
         ].map((stat) => (
           <motion.div
             key={stat.label}
             variants={scaleIn}
             className="text-center py-6 px-4 rounded-lg border"
-            style={{ background: 'var(--color-bg-elevated)', borderColor: 'var(--color-border)' }}
+            style={{ background: 'rgba(37,99,235,0.06)', borderColor: 'rgba(37,99,235,0.15)' }}
           >
             <p
               className="text-3xl md:text-4xl font-bold mb-1"
-              style={{ color: stat.color, fontFamily: 'var(--font-heading)' }}
+              style={{ color: BLUE, fontFamily: 'var(--font-heading)' }}
             >
               {stat.value}
             </p>
@@ -80,21 +82,21 @@ export function Placement({ data }: PlacementProps) {
             key={feature.title}
             variants={scaleIn}
             className="flex gap-4 p-5 rounded-lg border transition-all duration-300 cursor-default"
-            style={{ background: 'var(--color-bg-dark)', borderColor: 'var(--color-border)' }}
+            style={{ background: '#FFFFFF', borderColor: 'rgba(37,99,235,0.15)' }}
             onMouseEnter={(e) => {
               const el = e.currentTarget
-              el.style.borderColor = 'rgba(91,46,255,0.35)'
-              el.style.background = 'var(--color-bg-elevated)'
+              el.style.borderColor = 'rgba(37,99,235,0.35)'
+              el.style.background = 'rgba(37,99,235,0.06)'
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget
-              el.style.borderColor = 'var(--color-border)'
-              el.style.background = 'var(--color-bg-dark)'
+              el.style.borderColor = 'rgba(37,99,235,0.15)'
+              el.style.background = '#FFFFFF'
             }}
           >
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: 'rgba(91,46,255,0.12)', color: 'var(--color-primary)' }}
+              style={{ background: 'rgba(37,99,235,0.12)', color: BLUE }}
             >
               {iconMap[feature.icon] ?? <Award size={20} />}
             </div>

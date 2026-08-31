@@ -26,16 +26,16 @@ Next.js 14 App Router · Tailwind CSS v4 · Framer Motion · Lucide React · DM 
 | 1 | Navbar | `site.md` | — |
 | 2 | Hero | `hero.md` + `stats.md` | — |
 | 3 | FeatureStrip | `feature-strip.md` | — |
-| 4 | AIAdvantage | `curriculum.md` → `ai_section` | `#ai-advantage` |
-| 5 | VibeCoding | hardcoded | `#vibe-coding` |
-| 6 | Instructors | `instructors.md` | `#instructors` |
-| 7 | WhatYouLearn | `curriculum-modules.md` | `#curriculum` |
-| 8 | LearningPhilosophy | `learning-philosophy.md` | `#learning-philosophy` |
-| 9 | WhySkillBanao | `why-skill-banao.md` | `#why-skill-banao` |
-| 10 | LearningPath | `who-its-for.md` | `#learning-path` |
-| 11 | Placement | `placement.md` | `#placement` |
-| 12 | SuccessStories | `testimonials.md` | `#success-stories` |
-| 13 | SkillBanaoDifference | `difference.md` | `#difference` |
+| 4 | Instructors | `instructors.md` | `#instructors` |
+| 5 | Placement | `placement.md` | `#placement` |
+| 6 | LearningPath | `who-its-for.md` | `#learning-path` |
+| 7 | SuccessStories | `testimonials.md` | `#success-stories` |
+| 8 | WhatYouLearn | `curriculum-modules.md` | `#curriculum` |
+| 9 | AIAdvantage | `curriculum.md` → `ai_section` | `#ai-advantage` |
+| 10 | VibeCoding | hardcoded | `#vibe-coding` |
+| 11 | SkillBanaoDifference | `difference.md` | `#difference` |
+| 12 | LearningPhilosophy | `learning-philosophy.md` | `#learning-philosophy` |
+| 13 | WhySkillBanao | `why-skill-banao.md` | `#why-skill-banao` |
 | 14 | FAQ | `faqs.md` | `#faq` |
 | 15 | Footer | `site.md` | — |
 | — | StickyBarConditional → StickyBottomBar | `webinar-schedule.md` | — |
@@ -155,7 +155,7 @@ Standalone landing page for the live masterclass. 18 sections rendered by `Webin
 - **WhatYouLearn:** Accordion cards grouped by phase. Phase colours: P1 purple, P2 blue, P3 rose `#E11D48`, P4 green
 - **StickyBottomBar:** Glowing green CTA, no dismiss button, no countdown timer
 - **WhatsAppButton:** Fixed `bottom-24 right-6 z-40` — must stay above `StickyBottomBar` (`bottom-0`, full-width, `z-50`, ~60-70px tall), which otherwise covers anything at `bottom-6`. Also sits clear of `ScrollToTop` (`bottom-6 right-6`, only visible after scrolling past 600px).
-- **Sections with pastel backgrounds:** WhySkillBanao `#ECFDF5`, FAQ `#FFF7ED`, LearningPhilosophy uses `var(--color-bg-card)`
+- **Sections with pastel backgrounds:** WhySkillBanao `#ECFDF5` (green accent `#059669` throughout), FAQ `#FFF7ED` (orange accent `#EA580C` throughout), Placement `#EFF6FF` (blue accent `#2563EB` throughout stat/feature cards), FeatureStrip `linear-gradient(180deg, #FFD84D 0%, #FFC200 55%, #FFAA00 100%)` (top-to-bottom brand gold, same hue family as AIAdvantage's gradient; white translucent icon chips `rgba(255,255,255,0.5)`, each icon a distinct amber/brown tone from the gold family — `#7A5C00`/`#92400E`/`#713F12`/`#A16207`/`#854D0E`/`#B45309` — dark-ink text for contrast), LearningPhilosophy uses `var(--color-bg-card)`
 - **h1 size:** `clamp(2rem, 4.5vw, 3.5rem)` — reduced from default
 
 ---
