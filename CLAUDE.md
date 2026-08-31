@@ -168,6 +168,7 @@ Standalone landing page for the live masterclass. 18 sections rendered by `Webin
 | `/public/images/hero-mentors.png` | Main page hero right column |
 | `/public/images/webinar-lead-mentors.png` | Webinar hero right column (transparent PNG, both mentors together) |
 | `/public/images/instructors/` | Anil, Rajesh, Lingko, Anish, Meril |
+| `/public/images/companies/` | Mentor company logos (`ibm.png`, `mitu.png`, `guide.png`) — shown beside each mentor's name in Instructors |
 | `/public/images/students/` | Pooja, Subham, Ondrilla, Amkitha (testimonials) |
 
 ---

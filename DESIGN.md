@@ -42,10 +42,14 @@ The site uses a **light base** with isolated dark sections via CSS class overrid
 **Pattern:** Sections alternate between `var(--color-bg-dark)` and `var(--color-bg-card)` for visual rhythm. Dark sections use `.section-hero` or `.section-dark` which override all CSS variables locally — no hardcoded dark values needed in components.
 
 ### Sections with special backgrounds
-- **WhySkillBanao** — `#ECFDF5` (pastel green)
-- **FAQ** — `#FFF7ED` (pastel orange)
+- **WhySkillBanao** — `#ECFDF5` (pastel green), accent `#059669` throughout badge/quote/stats/tags
+- **FAQ** — `#FFF7ED` (pastel orange), accent `#EA580C` throughout accordion/icons
+- **Placement** — `#EFF6FF` (pastel blue), accent `#2563EB` throughout stat cards and feature cards
+- **FeatureStrip** — `linear-gradient(180deg, #FFD84D 0%, #FFC200 55%, #FFAA00 100%)` (top-to-bottom brand gold); each icon chip is white-translucent (`rgba(255,255,255,0.5)`) with a distinct amber/brown icon color (`#7A5C00`, `#92400E`, `#713F12`, `#A16207`, `#854D0E`, `#B45309`) — all from the gold family so they read as variety without clashing with the background
 - **LearningPhilosophy** — `var(--color-bg-card)`
 - **Apply as a Mentor banner** (in Instructors) — `#0D0F14`
+
+**Pattern for pastel sections:** pick one accent hue that matches the pastel background, then reuse it (at varying opacity) for every border, icon, badge, and highlight inside that section — never mix in unrelated brand colors (purple/green/orange) once a section has its own pastel identity.
 
 ---
 
@@ -116,6 +120,13 @@ Standardised heading block with optional badge (gold pill), title, gradient high
   Label
 </span>
 ```
+
+---
+
+## Floating Widgets
+
+### WhatsApp Chat Button (`components/ui/WhatsAppButton.tsx`)
+Fixed `bottom-24 right-6 z-40`, chat-widget "capsule" design: a white `Chat with us` pill (`rounded-full`, `boxShadow: 0 4px 20px rgba(0,0,0,0.12)`) sits flush against a `#25D366` (WhatsApp brand green) circular icon button, overlapping slightly via negative margin so they read as one shape. The whole capsule is a single link (`wa.me/<phone>?text=<message>`), content driven by `content/whatsapp.md` → `WhatsAppData`. Mounted via `WhatsAppButtonConditional` (hidden on the registration-success standalone page). Must stay clear of `StickyBottomBar` (`bottom-0`, full-width) and `ScrollToTop` (`bottom-6 right-6`).
 
 ---
 
@@ -196,6 +207,7 @@ Used on standalone pages where Framer Motion is not available (server components
 | `/public/images/webinar-lead-mentors.png` | Webinar hero (transparent PNG) |
 | `/public/images/instructors/` | Instructor cards (anil, rajesh, lingko, anish, meril) |
 | `/public/images/students/` | Testimonial cards |
+| `/public/images/companies/` | Mentor company logos in Instructors cards (`ibm.png`, `mitu.png`, `guide.png`) — rendered `object-contain object-right` in a `relative h-6 w-20` box beside each mentor's name |
 
 **Logo treatment in Navbar:** `filter: brightness(0) invert(1)` for white on dark hero; no filter when scrolled (dark logo on white).
 
