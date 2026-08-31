@@ -57,18 +57,33 @@ export function Navbar({ navLinks, ctaNav, logo, siteName }: NavbarProps) {
       >
         <div className="container mx-auto px-4 md:px-8 max-w-7xl flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center shrink-0" aria-label={siteName}>
-            <img
-              src="/logo/skill-banao-logo.svg"
-              alt={siteName}
-              style={{
-                height: '26px',
-                width: 'auto',
-                filter: isScrolled ? 'none' : 'brightness(0) invert(1)',
-                transition: 'filter 0.3s ease',
-              }}
-            />
-          </a>
+          {isWebinar ? (
+            <div className="flex items-center shrink-0" aria-label={siteName}>
+              <img
+                src="/logo/skill-banao-logo.svg"
+                alt={siteName}
+                style={{
+                  height: '26px',
+                  width: 'auto',
+                  filter: isScrolled ? 'none' : 'brightness(0) invert(1)',
+                  transition: 'filter 0.3s ease',
+                }}
+              />
+            </div>
+          ) : (
+            <a href="/" className="flex items-center shrink-0" aria-label={siteName}>
+              <img
+                src="/logo/skill-banao-logo.svg"
+                alt={siteName}
+                style={{
+                  height: '26px',
+                  width: 'auto',
+                  filter: isScrolled ? 'none' : 'brightness(0) invert(1)',
+                  transition: 'filter 0.3s ease',
+                }}
+              />
+            </a>
+          )}
 
           {/* Desktop Nav */}
           {!isWebinar && (
