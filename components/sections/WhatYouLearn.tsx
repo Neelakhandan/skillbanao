@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { CheckCircle2, FileText, ChevronDown, ChevronRight, Brain, Search, Layers, GraduationCap } from 'lucide-react'
+import { CheckCircle2, FileText, ChevronDown, Brain, Search, Layers, GraduationCap } from 'lucide-react'
 import { fadeUp, staggerContainer } from '@/lib/motion'
 import { Section } from '@/components/ui/Section'
 import type { CurriculumModulesData, ModuleItem } from '@/lib/types'
@@ -14,26 +14,33 @@ interface WhatYouLearnProps {
 const PHASE_ICONS = [Brain, Search, Layers, GraduationCap]
 
 const PHASE_COLORS = [
-  { accent: '#5B2EFF', light: 'rgba(91,46,255,0.08)', border: 'rgba(91,46,255,0.15)', divider: 'rgba(91,46,255,0.12)' },
-  { accent: '#0EA5E9', light: 'rgba(14,165,233,0.08)', border: 'rgba(14,165,233,0.15)', divider: 'rgba(14,165,233,0.12)' },
-  { accent: '#E11D48', light: 'rgba(225,29,72,0.08)', border: 'rgba(225,29,72,0.15)', divider: 'rgba(225,29,72,0.12)' },
-  { accent: '#059669', light: 'rgba(5,150,105,0.08)', border: 'rgba(5,150,105,0.15)', divider: 'rgba(5,150,105,0.12)' },
+  { accent: '#5B2EFF', light: 'rgba(91,46,255,0.08)', border: 'rgba(91,46,255,0.15)', divider: 'rgba(91,46,255,0.12)', pastel: '#EBE6FF', ghost: 'rgba(91,46,255,0.05)' },
+  { accent: '#0EA5E9', light: 'rgba(14,165,233,0.08)', border: 'rgba(14,165,233,0.15)', divider: 'rgba(14,165,233,0.12)', pastel: '#E2F4FC', ghost: 'rgba(14,165,233,0.05)' },
+  { accent: '#E11D48', light: 'rgba(225,29,72,0.08)', border: 'rgba(225,29,72,0.15)', divider: 'rgba(225,29,72,0.12)', pastel: '#FBE4E9', ghost: 'rgba(225,29,72,0.05)' },
+  { accent: '#059669', light: 'rgba(5,150,105,0.08)', border: 'rgba(5,150,105,0.15)', divider: 'rgba(5,150,105,0.12)', pastel: '#E1F2ED', ghost: 'rgba(5,150,105,0.05)' },
 ]
+
+const RAIL_BG = '#FAFAFC'
 
 interface ModuleCardProps {
   module: ModuleItem
   color: typeof PHASE_COLORS[number]
   defaultOpen?: boolean
+  highlight?: boolean
 }
 
-function ModuleCard({ module, color: c, defaultOpen = false }: ModuleCardProps) {
+function ModuleCard({ module, color: c, defaultOpen = false, highlight = false }: ModuleCardProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
     <motion.div
       variants={fadeUp}
       className="rounded-xl border overflow-hidden"
-      style={{ borderColor: isOpen ? c.border : 'var(--color-border)', background: 'var(--color-bg-card)', transition: 'border-color 0.2s' }}
+      style={{
+        borderColor: isOpen ? c.border : (highlight ? c.border : 'var(--color-border)'),
+        background: highlight ? `linear-gradient(135deg, ${c.light} 0%, #FFFFFF 100%)` : '#FFFFFF',
+        transition: 'border-color 0.2s',
+      }}
     >
       {/* Clickable header */}
       <button
@@ -151,124 +158,90 @@ export function WhatYouLearn({ data }: WhatYouLearnProps) {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <Section id="curriculum" style={{ background: 'var(--color-bg-dark)' } as React.CSSProperties}>
+    <Section id="curriculum" style={{ background: RAIL_BG } as React.CSSProperties}>
 
       {/* Section header */}
-      <div className="mb-10 text-center">
+      <div className="max-w-[680px] mx-auto text-center mb-16 md:mb-24">
         <span
-          className="inline-block text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-4"
-          style={{ background: 'rgba(91,46,255,0.1)', color: 'var(--color-primary)' }}
+          className="inline-block text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-5"
+          style={{ background: 'rgba(255,194,0,0.16)', color: '#8A5B00' }}
         >
           {data.badge}
         </span>
         <h2
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="text-3xl md:text-5xl font-bold mb-4"
           style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}
         >
           {data.title}
         </h2>
-        <p className="text-base max-w-2xl mx-auto" style={{ color: 'var(--color-text-secondary)' }}>
+        <p className="text-base leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
           {data.subtitle}
         </p>
       </div>
 
-      {/* Phase navigation strip — progressive */}
-      <div className="flex flex-col md:flex-row items-stretch mb-14 rounded-xl border overflow-hidden" style={{ borderColor: 'var(--color-border)' }}>
-        {data.phases.map((phase, i) => {
-          const c = PHASE_COLORS[i % PHASE_COLORS.length]
-          const Icon = PHASE_ICONS[i]
-          const isLast = i === data.phases.length - 1
-          return (
-            <div key={phase.number} className="flex md:flex-1 items-stretch">
-              {/* Phase card */}
-              <div
-                className="flex-1 flex flex-col gap-3 px-5 py-5 transition-colors duration-200"
-                style={{ background: c.light, borderRight: !isLast ? `1px solid ${c.border}` : 'none' }}
-              >
-                {/* Icon + phase number row */}
-                <div className="flex items-center justify-between">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center"
-                    style={{ background: c.accent }}
-                  >
-                    <Icon size={18} color="#fff" />
-                  </div>
-                  <span
-                    className="text-xs font-black uppercase tracking-widest px-2 py-0.5 rounded-full"
-                    style={{ background: 'rgba(0,0,0,0.06)', color: c.accent }}
-                  >
-                    {phase.number < 10 ? `0${phase.number}` : phase.number}
-                  </span>
-                </div>
-
-                {/* Label + weeks */}
-                <div>
-                  <p className="text-sm font-bold leading-snug mb-0.5" style={{ color: 'var(--color-text-primary)' }}>
-                    {phase.label}
-                  </p>
-                  <p className="text-xs" style={{ color: c.accent }}>{phase.weeks}</p>
-                </div>
-
-                {/* Bottom accent bar */}
-                <div className="w-full h-0.5 rounded-full mt-auto" style={{ background: c.accent, opacity: 0.3 }} />
-              </div>
-
-              {/* Connector arrow (between cards) */}
-              {!isLast && (
-                <div
-                  className="hidden md:flex items-center justify-center w-6 shrink-0"
-                  style={{ background: 'var(--color-bg-card)' }}
-                >
-                  <ChevronRight size={14} style={{ color: 'var(--color-text-muted)' }} />
-                </div>
-              )}
-            </div>
-          )
-        })}
-      </div>
-
-      {/* Phases + modules */}
+      {/* Journey rail */}
       <motion.div
         ref={ref}
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="flex flex-col gap-12"
+        className="relative max-w-[1000px] mx-auto"
       >
+        <div
+          className="absolute top-1.5 bottom-1.5 left-5 md:left-[27px] w-0.5"
+          style={{ background: 'linear-gradient(180deg, #5B2EFF 0%, #0EA5E9 33%, #E11D48 66%, #059669 100%)', opacity: 0.22 }}
+        />
+
         {data.phases.map((phase, phaseIdx) => {
           const c = PHASE_COLORS[phaseIdx % PHASE_COLORS.length]
+          const Icon = PHASE_ICONS[phaseIdx % PHASE_ICONS.length]
+          const isLastPhase = phaseIdx === data.phases.length - 1
+          const paddedNumber = phase.number < 10 ? `0${phase.number}` : `${phase.number}`
+
           return (
-            <div key={phase.number}>
-              {/* Phase header */}
-              <div
-                className="flex flex-wrap items-center gap-3 mb-6 pb-4 border-b"
-                style={{ borderColor: c.divider }}
+            <div
+              key={phase.number}
+              className="relative pl-14 md:pl-[88px]"
+              style={{ marginBottom: isLastPhase ? 0 : 88 }}
+            >
+              {/* Ghost phase number */}
+              <span
+                className="absolute -top-6 md:-top-10 left-9 md:left-10 text-[90px] md:text-[180px] font-black leading-none select-none pointer-events-none"
+                style={{ color: c.ghost }}
               >
-                <div className="w-1.5 h-6 rounded-full shrink-0" style={{ background: c.accent }} />
-                <span className="text-xs font-black uppercase tracking-widest" style={{ color: c.accent }}>
-                  Phase {phase.number}
-                </span>
-                <span className="text-base font-bold" style={{ color: 'var(--color-text-primary)' }}>
-                  {phase.label}
-                </span>
-                <span
-                  className="ml-auto text-xs font-semibold px-3 py-1 rounded-full"
-                  style={{ background: c.light, color: c.accent, border: `1px solid ${c.border}` }}
-                >
-                  {phase.weeks}
-                </span>
+                {paddedNumber}
+              </span>
+
+              {/* Icon node */}
+              <div
+                className="absolute left-0 top-0.5 w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center z-[2]"
+                style={{ background: c.pastel, border: `2px solid ${c.border.replace('0.15', '0.3')}`, boxShadow: `0 0 0 8px ${RAIL_BG}` }}
+              >
+                <Icon size={20} style={{ color: c.accent }} />
               </div>
 
-              {/* Module accordion cards */}
-              <div className="flex flex-col gap-3">
-                {phase.modules.map((module, moduleIdx) => (
-                  <ModuleCard
-                    key={module.id}
-                    module={module}
-                    color={c}
-                    defaultOpen={phaseIdx === 0 && moduleIdx === 0}
-                  />
-                ))}
+              <div className="relative z-[2]">
+                <span className="text-xs font-black uppercase tracking-widest" style={{ color: c.accent }}>
+                  Phase {phase.number} &middot; {phase.weeks}
+                </span>
+                <h3
+                  className="text-2xl font-bold mt-2 mb-6"
+                  style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}
+                >
+                  {phase.label}
+                </h3>
+
+                <div className="flex flex-col gap-3.5">
+                  {phase.modules.map((module, moduleIdx) => (
+                    <ModuleCard
+                      key={module.id}
+                      module={module}
+                      color={c}
+                      defaultOpen={phaseIdx === 0 && moduleIdx === 0}
+                      highlight={isLastPhase}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )
